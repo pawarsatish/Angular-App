@@ -1,0 +1,9 @@
+.tableHeader{
+    text-transform: uppercase;
+}
+tr {
+    cursor: pointer;
+}
+.form-select{
+    margin-right: 15px;
+}

@@ -1,0 +1,35 @@
+<h1>Employees List</h1>
+<div class="container-fluid">
+  <div class="btn-group">
+    <select class="form-select" aria-label="Default select example" (change)="selectChange($event)">
+      <option value="0" selected>Select Column</option>
+      <option [value]="column" *ngFor="let column of tableColumns">{{column}}</option>      
+    </select>
+    <div class="input-group">
+      <input type="search" class="form-control rounded" [(ngModel)]="searchText" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary" (click)="searchEmployees()">search</button>
+      <button type="button" class="btn btn-outline-primary" (click)="clearFilter()">clearFilter</button>
+    </div> 
+  </div>
+ 
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="tableHeader" scope="col" *ngFor="let column of tableColumns">{{column}}</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <th scope="row" >{{emp.id}}</th> 
+            <th scope="row" >{{emp.dob}}</th> 
+            <th scope="row" >{{emp.email}}</th> 
+            <th scope="row" >{{emp.gender}}</th>    
+            <th scope="row" >{{emp.mobile}}</th>    
+            <th scope="row" >{{emp.address}}</th>    
+            <th scope="row" >{{emp.company}}</th>    
+            <th scope="row" >{{emp.fullName}}</th>  
+            <th scope="row" >{{emp.position}}</th>           
+          </tr>         
+        </tbody>
+      </table>
+</div>
